@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://magra-mariners-association-final-tau.vercel.app/sitemap.xml
