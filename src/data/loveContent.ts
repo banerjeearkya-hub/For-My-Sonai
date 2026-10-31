@@ -17,6 +17,11 @@
  * 3. The built-in romantic lofi synthesizer will automatically play if no MP3 is found!
  * ============================================================================
  */
+import beachProposalImg from '../assets/memories/beach_proposal.jpg';
+import beachSmilesImg from '../assets/memories/beach_smiles.jpg';
+import templeMomentImg from '../assets/memories/temple_moment.jpg';
+import festiveLightsImg from '../assets/memories/festive_lights.jpg';
+import melaAdventureImg from '../assets/memories/mela_adventure.jpg';
 
 export interface TimelineItem {
   id: string;
@@ -163,53 +168,53 @@ export const loveContent: LoveWebsiteContent = {
     items: [
       {
         id: "first-meeting",
-        tag: "The Beginning",
-        title: "The Day We First Met",
-        date: "Memory Placeholder",
+        tag: "Little Adventures",
+        title: "Wandering Through Life With You",
+        date: "Cherished Memories",
         description:
-          "The moment our paths crossed for the very first time. Some moments may appear simple to the rest of the world, but looking back, that very day marked the quiet beginning of something truly special.",
-        image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
-        quote: "Some people arrive and gently make your whole world softer.",
+          "From simple strolls to bustling fairs and little markets, every moment spent exploring by your side feels like the sweetest adventure.",
+        image: melaAdventureImg,
+        quote: "Some people arrive and gently make your whole world brighter.",
       },
       {
         id: "first-conversation",
-        tag: "First Words",
-        title: "Our Very First Conversation",
-        date: "Memory Placeholder",
+        tag: "Sun & Waves",
+        title: "Beach Days & Carefree Laughter",
+        date: "12 May 2024",
         description:
-          "From awkward hellos to losing track of time. It felt like talking to someone I had known for a lifetime—easy, comforting, and full of effortless smiles.",
-        image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80",
-        quote: "Finding home in someone's words is a rare kind of magic.",
+          "Walking along the warm shoreline, listening to the ocean breeze and your cheerful laugh. Being beside you makes any place feel like paradise.",
+        image: beachSmilesImg,
+        quote: "Your laughter is the sweetest melody under the sun.",
       },
       {
         id: "special-memories",
-        tag: "Heartstrings",
-        title: "Late Night Talks & Shared Laughter",
-        date: "Memory Placeholder",
+        tag: "Festive Nights",
+        title: "Festive Lights & Radiant Smiles",
+        date: "02 October 2025",
         description:
-          "Those conversations that stretched into the quiet hours of the night. Whispering dreams, sharing jokes only we understood, and feeling that no matter the distance, we were right beside each other.",
-        image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
-        quote: "Laughter is twice as sweet when it is shared with you.",
+          "Surrounded by sparkling lights and celebration, but the brightest and most beautiful thing in the whole crowd was your smile right next to me.",
+        image: festiveLightsImg,
+        quote: "In a room full of lights, my eyes will always search for you.",
       },
       {
         id: "favourite-moments",
-        tag: "Everyday Joy",
-        title: "The Little Ordinary Magic",
-        date: "Memory Placeholder",
+        tag: "Sweet Blessings",
+        title: "Standing Together In Blessings",
+        date: "02 October 2025",
         description:
-          "It is not just the big celebrations—it is how your laughter brightens a gloomy afternoon, how your voice brings instant peace, and how your smile lights up my entire day.",
-        image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
-        quote: "With you, even the simplest seconds feel like a blessing.",
+          "Standing by the grand temple together. You looked completely breathtaking in red, and looking at you, I just felt so blessed to have you in my life.",
+        image: templeMomentImg,
+        quote: "Having you as my Sonai is the greatest blessing I could ever ask for.",
       },
       {
         id: "beautiful-milestones",
-        tag: "Growing Together",
-        title: "Every Milestone We Cherish",
-        date: "Memory Placeholder",
+        tag: "Our Promise",
+        title: "A Timeless Promise By The Ocean",
+        date: "12 May 2024",
         description:
-          "Step by step, day by day, building memories, understanding each other deeper, and knowing that having you in my life makes everything brighter and so much more meaningful.",
-        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
-        quote: "Here's to every milestone behind us, and all the magic yet to come.",
+          "Down on one knee on the morning sand with the water reflecting the sunrise. Looking into your eyes and knowing that my heart is unconditionally yours forever.",
+        image: beachProposalImg,
+        quote: "Always and forever, holding your hand through every chapter.",
       },
     ],
   },
@@ -325,55 +330,47 @@ export const loveContent: LoveWebsiteContent = {
   // 6. Memory Gallery
   gallery: {
     title: "Little Moments, Big Memories 📸",
-    subtitle: "Snapshots of warmth, laughter, and timeless feelings. (Replace with our real photos anytime!)",
+    subtitle: "Snapshots of our laughter, our adventures, and timeless love.",
     items: [
       {
         id: "photo-1",
-        title: "Golden Hour Glow",
-        caption: "When the sky mirrored the warmth of your smile. ✨",
-        date: "Cherished Moment",
-        image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80",
+        title: "Golden Festive Days",
+        caption: "You looked breathtaking in red by the grand temple. ❤️",
+        date: "02 October 2025",
+        image: templeMomentImg,
         tilt: -1.8,
       },
       {
         id: "photo-2",
-        title: "A Quiet Coffee Date",
-        caption: "Time stops whenever we share a table and a warm cup.",
-        date: "Cozy Afternoons",
-        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80",
+        title: "A Timeless Promise",
+        caption: "Down on one knee by the ocean—my heart is forever yours. 💍✨",
+        date: "12 May 2024",
+        image: beachProposalImg,
         tilt: 1.5,
       },
       {
         id: "photo-3",
-        title: "Underneath The Sunset",
-        caption: "Watching the twilight fade, thinking of how lucky I am.",
-        date: "Evening Magic",
-        image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+        title: "Sun, Waves & Your Radiance",
+        caption: "The beach was bright, but your smile was the warmest view. 🌊",
+        date: "12 May 2024",
+        image: beachSmilesImg,
         tilt: -1.2,
       },
       {
         id: "photo-4",
-        title: "Hand In Hand",
-        caption: "The simplest touch that speaks louder than a thousand words.",
-        date: "Walks Together",
-        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80",
+        title: "Little Adventures Together",
+        caption: "Wandering through the bustling fair, lost in our own little world. 🎡",
+        date: "Special Memories",
+        image: melaAdventureImg,
         tilt: 2.1,
       },
       {
         id: "photo-5",
-        title: "City Lights & Heartbeats",
-        caption: "Amidst the rushing world, finding pure peace with you.",
-        date: "Starlight Nights",
-        image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80",
-        tilt: -2.0,
-      },
-      {
-        id: "photo-6",
-        title: "Laughter in the Breeze",
-        caption: "The sound I would choose to listen to on repeat forever.",
-        date: "Pure Happiness",
-        image: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=80",
-        tilt: 1.2,
+        title: "Shining In The Lights",
+        caption: "Surrounded by festive colors, your joy illuminated everything. ✨",
+        date: "02 October 2025",
+        image: festiveLightsImg,
+        tilt: -1.5,
       },
     ],
   },
