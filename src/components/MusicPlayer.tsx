@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX, Music, Heart, ChevronUp, ChevronDown } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, Heart, ChevronUp, ChevronDown } from 'lucide-react';
 import { loveContent } from '../data/loveContent';
 import { romanticAudio } from '../utils/romanticAudio';
 
@@ -12,11 +12,9 @@ export const MusicPlayer: React.FC = () => {
   const [visualizerBars, setVisualizerBars] = useState([0.3, 0.6, 0.4, 0.7, 0.5]);
 
   useEffect(() => {
-    // Initialize audio URL from config
     romanticAudio.initCustomAudio(loveContent.music.audioSrc);
     romanticAudio.setVolume(volume);
 
-    // Set callback for visualizer bars
     romanticAudio.setVisualizerCallback((bars) => {
       setVisualizerBars(bars);
     });
@@ -53,61 +51,61 @@ export const MusicPlayer: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-5 left-5 z-40 select-none">
+    <div className="fixed bottom-4 left-3 sm:bottom-5 sm:left-5 z-40 select-none max-w-[calc(100vw-4.5rem)] sm:max-w-xs">
       <motion.div
         layout
-        className="glass-panel rounded-2xl shadow-xl shadow-[#8B1538]/15 border border-[#F4A6B8]/50 overflow-hidden bg-white/90 backdrop-blur-xl"
+        className="glass-panel rounded-2xl shadow-xl shadow-[#8B1538]/15 border border-[#F4A6B8]/50 overflow-hidden bg-white/95 backdrop-blur-xl"
       >
         {/* Compact Bar */}
-        <div className="p-2.5 sm:p-3 flex items-center gap-3">
+        <div className="p-2 sm:p-2.5 flex items-center gap-2.5">
           {/* Play/Pause Button */}
           <button
             onClick={togglePlay}
-            className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#8B1538] to-[#F4A6B8] flex items-center justify-center text-white shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-[#8B1538] to-[#F4A6B8] flex items-center justify-center text-white shadow-md active:scale-95 transition-all cursor-pointer touch-manipulation shrink-0"
             aria-label={isPlaying ? 'Pause Music' : 'Play Music'}
           >
             {isPlaying ? (
-              <Pause className="w-4 h-4 fill-white" />
+              <Pause className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white" />
             ) : (
-              <Play className="w-4 h-4 fill-white ml-0.5" />
+              <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white ml-0.5" />
             )}
           </button>
 
           {/* Track Info & Visualizer */}
           <div
-            className="cursor-pointer flex flex-col justify-center pr-2"
+            className="cursor-pointer flex flex-col justify-center min-w-0 pr-1 touch-manipulation"
             onClick={() => setIsExpanded(!isExpanded)}
           >
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-serif font-bold text-[#4A1025] max-w-[120px] sm:max-w-[150px] truncate">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] sm:text-xs font-serif font-bold text-[#4A1025] truncate max-w-[100px] sm:max-w-[130px]">
                 {loveContent.music.trackTitle}
               </span>
 
               {/* Animated Visualizer Bars */}
-              <div className="flex items-end gap-0.5 h-3.5 w-6">
+              <div className="flex items-end gap-0.5 h-3 w-5 shrink-0">
                 {visualizerBars.map((height, i) => (
                   <span
                     key={i}
-                    className="w-1 bg-[#8B1538] rounded-full transition-all duration-150"
+                    className="w-0.5 sm:w-1 bg-[#8B1538] rounded-full transition-all duration-150"
                     style={{
-                      height: isPlaying ? `${Math.max(3, height * 14)}px` : '3px',
-                      opacity: isPlaying ? 0.9 : 0.4,
+                      height: isPlaying ? `${Math.max(2.5, height * 12)}px` : '2px',
+                      opacity: isPlaying ? 0.9 : 0.35,
                     }}
                   />
                 ))}
               </div>
             </div>
 
-            <span className="text-[10px] text-[#8B1538] font-medium flex items-center gap-1">
-              <Heart className="w-2.5 h-2.5 fill-[#8B1538]" />
-              <span>{isPlaying ? 'Playing Romantic Melody' : 'Click to Play'}</span>
+            <span className="text-[9px] sm:text-[10px] text-[#8B1538] font-medium flex items-center gap-1 truncate">
+              <Heart className="w-2 h-2 fill-[#8B1538] shrink-0" />
+              <span>{isPlaying ? 'Playing Melody' : 'Tap to Play'}</span>
             </span>
           </div>
 
           {/* Expand/Collapse Toggle Button */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="p-1.5 rounded-lg text-[#8B1538] hover:bg-[#FCE4EC] transition-colors cursor-pointer"
+            className="p-1 rounded-lg text-[#8B1538] active:bg-[#FCE4EC] transition-colors cursor-pointer touch-manipulation shrink-0"
             aria-label="Expand Player Controls"
           >
             {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
@@ -122,13 +120,13 @@ export const MusicPlayer: React.FC = () => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="px-4 pb-3 pt-1 border-t border-[#FCE4EC] flex flex-col gap-2.5"
+              className="px-3.5 pb-2.5 pt-1 border-t border-[#FCE4EC] flex flex-col gap-2"
             >
               {/* Volume Slider & Mute */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5">
                 <button
                   onClick={toggleMute}
-                  className="p-1 rounded-md text-[#8B1538] hover:bg-[#FCE4EC] transition-colors"
+                  className="p-1 rounded-md text-[#8B1538] active:bg-[#FCE4EC] transition-colors touch-manipulation"
                   aria-label={isMuted ? 'Unmute' : 'Mute'}
                 >
                   {isMuted || volume === 0 ? (
@@ -145,18 +143,13 @@ export const MusicPlayer: React.FC = () => {
                   step="0.05"
                   value={isMuted ? 0 : volume}
                   onChange={handleVolumeChange}
-                  className="w-28 sm:w-36 h-1.5 bg-[#FCE4EC] rounded-lg appearance-none cursor-pointer accent-[#8B1538]"
+                  className="w-24 sm:w-32 h-1.5 bg-[#FCE4EC] rounded-lg appearance-none cursor-pointer accent-[#8B1538] touch-manipulation"
                 />
 
-                <span className="text-[10px] text-[#4A1025]/60 font-semibold w-7">
+                <span className="text-[10px] text-[#4A1025]/60 font-semibold w-6">
                   {isMuted ? '0%' : `${Math.round(volume * 100)}%`}
                 </span>
               </div>
-
-              {/* Note on custom MP3 replacement */}
-              <p className="text-[10px] text-[#4A1025]/60 italic max-w-[210px] leading-tight">
-                Plays soothing romantic melody. Add your own MP3 in <code>public/music/</code> anytime!
-              </p>
             </motion.div>
           )}
         </AnimatePresence>

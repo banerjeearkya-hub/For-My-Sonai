@@ -26,6 +26,7 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -34,6 +35,26 @@ body {
   background-color: #FFF8F5;
   color: #4A1025;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Eliminate 300ms tap delay on mobile */
+button,
+a,
+input,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+/* Mobile no-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Reduced motion preference */
