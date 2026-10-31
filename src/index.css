@@ -1,12 +1,49 @@
-/* Minimal base resets. Full styles are in src/styles/global.css */
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
+@import "tailwindcss";
+@import "./styles/animations.css";
+
+@theme {
+  --color-romantic-red: #8B1538;
+  --color-romantic-rose: #F4A6B8;
+  --color-romantic-soft: #FCE4EC;
+  --color-romantic-cream: #FFF8F5;
+  --color-romantic-burgundy: #4A1025;
+  --color-romantic-gold: #D4AF37;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-cursive: 'Great Vibes', cursive;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
-* {
-  box-sizing: border-box;
+:root {
+  --romantic-red: #8B1538;
+  --romantic-rose: #F4A6B8;
+  --romantic-soft: #FCE4EC;
+  --romantic-cream: #FFF8F5;
+  --romantic-burgundy: #4A1025;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF8F5;
+  color: #4A1025;
+  overflow-x: hidden;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
